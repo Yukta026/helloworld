@@ -3,11 +3,11 @@ import pickle
 import numpy as np
 
 
-filename = 'popular.pkl'
-popular_df = pickle.load(open(filename, 'rb'))
+
 
 app = Flask(__name__)
 
+popular_df = pickle.load(open('popular.pkl','rb'))
 
 @app.route('/')
 def index():
