@@ -2,7 +2,8 @@ from flask import Flask,render_template,request
 import pickle
 import numpy as np
 
-new_more_popular_df = pickle.load(open('new_more_popular.pkl','rb'))
+filename = 'new_more_popular.pkl'
+new_more_popular_df = pickle.load(open(filename,'rb'))
 app = Flask(__name__)
 
 
