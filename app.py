@@ -1,7 +1,7 @@
 from flask import Flask,render_template
 import pickle
 
-popular_df = pickle.load(open('new_more_popular.pkl','rb'))
+new_more_popular_df = pickle.load(open('new_more_popular.pkl','rb'))
 app = Flask(__name__)
 
 
