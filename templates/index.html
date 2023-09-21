@@ -18,34 +18,34 @@
          <li><a href="#" style="color:#FFFFFF;">Code</a></li>
      </ul>
   </nav>
-	  <div class="container">
+<div class="container">
     <div class="row">
         <div class="col-md-12">
             <h1 class="text-white" style="color:white;font-size:50px">Top 20 books</h1>
         </div>
 
-      
+        {% for i in range(book_name|length) %}
 
             <div class="col-md-3" style="margin-top:50px">
                 <div class="card">
                   <div class="card-body">
-                      <img class="card-image-top" src="http://images.amazon.com/images/P/0195153448.01.MZZZZZZZ.jpg">
-                      <p class="text-white">Classical Mythology</p>
-                      <h4 class="text-white">Mark P. O. Morford</h4>
-                      <h4 class="text-white">Votes - 500</h4>
-
+                      <img class="card-image-top" src="{{ image[i] }}">
+                      <p class="text-white">{{  book_name[i] }}</p>
+                      <h4 class="text-white">{{  author[i] }}</h4>
+                      <h4 class="text-white">Votes - {{  votes[i] }}</h4>
+<!--                      <h4 class="text-white">Rating - {{  rating[i] }}</h4>-->
                   </div>
                 </div>
             </div>
 
 
-      
+        {% endfor %}
 
 
 
 
 
     </div>
-	  </div>
+</div>
   </body>
 </html>
