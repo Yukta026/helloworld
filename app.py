@@ -5,7 +5,7 @@ import numpy as np
 
 app = Flask(__name__)
 
-popular = pickle.load(open('./popular.pkl','rb'))
+filename = 'popular.pkl'
 
 @app.route('/')
 def index():
