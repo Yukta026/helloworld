@@ -7,7 +7,7 @@ import numpy as np
 
 app = Flask(__name__)
 
-popular_df = pickle.load(open('popular.pkl','rb'))
+popular_df = pickle.load(open("popular.pkl","rb"))
 
 @app.route('/')
 def index():
