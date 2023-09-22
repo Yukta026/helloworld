@@ -5,7 +5,7 @@ import numpy as np
 
 app = Flask(__name__)
 
-popular_df = joblib.load(open("popular.pkl","rb"))
+popular_df = joblib.load(open('popular.pkl','rb'))
 
 @app.route('/')
 def index():
