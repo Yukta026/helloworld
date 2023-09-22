@@ -2,10 +2,12 @@ from flask import Flask,render_template,request
 import pickle
 import joblib
 import numpy as np
+import pandas as pd
 
 app = Flask(__name__)
 
 filename = 'popular.pkl'
+popular = pickle.load(open(filename, 'rb'))
 
 @app.route('/')
 def index():
