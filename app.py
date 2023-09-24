@@ -12,7 +12,7 @@ logging.basicConfig(filename='app.log', level=logging.DEBUG)
 
 
 try:
-    script_dir = os.path.dirname(os.path.abspath(__file))
+    script_dir = os.path.dirname(os.path.abspath(__file__))
     popular_path = os.path.join(script_dir, 'popular.pkl')
     pt_path = os.path.join(script_dir, 'pt.pkl')
     similarity_scores_path = os.path.join(script_dir, 'similarity_scores.pkl')
