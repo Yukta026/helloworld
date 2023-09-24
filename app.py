@@ -17,7 +17,7 @@ try:
     with open(model_path, 'rb') as file:
             popular = pickle.load(file)
 except Exception as e:
-        logging.error(f"Error loading pickle file '{file_path}': {str(e)}")
+        logging.error(f"Error loading pickle file: {str(e)}")
         
 @app.route('/')
 def index():
