@@ -28,11 +28,11 @@ except Exception as e:
 @app.route('/')
 def index():
     return render_template('index.html',
-                           book_name = list(popular['Book-Title'].values),
-                           author=list(popular['Book-Author'].values),
-                           image=list(popular['Image-URL-M'].values),
-                           votes=list(popular['num_ratings'].values),
-                           rating=list(popular['avg_ratings'].values)
+                           book_name=list(popular.get('Book-Title', [])),
+                           author=list(popular.get('Book-Author', [])),
+                           image=list(popular.get('Image-URL-M', [])),
+                           votes=list(popular.get('num_ratings', [])),
+                           rating=list(popular.get('avg_ratings', []))
                            )
 
 if __name__ == '__main__':
