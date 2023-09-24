@@ -10,25 +10,23 @@ app = Flask(__name__)
 
 logging.basicConfig(filename='app.log', level=logging.DEBUG)
 
-# Define a function to load pickle files
-def load_pickle(file_path):
-    try:
-        with open(file_path, 'rb') as file:
-            data = pickle.load(file)
-        return data
-    except Exception as e:
-        logging.error(f"Error loading pickle file '{file_path}': {str(e)}")
-        return None
 
-# Define the paths to your pickle files
-script_dir = os.path.dirname(os.path.abspath(__file__))
-popular_path = os.path.join(script_dir, 'popular.pkl')
-pt_path = os.path.join(script_dir, 'pt.pkl')
-similarity_scores_path = os.path.join(script_dir, 'similarity_scores.pkl')
-# Load the pickle files
-popular = load_pickle(popular_path)
-pt = load_pickle(pt_path)
-similarity_scores = load_pickle(similarity_scores_path)
+try:
+    script_dir = os.path.dirname(os.path.abspath(__file))
+    popular_path = os.path.join(script_dir, 'popular.pkl')
+    pt_path = os.path.join(script_dir, 'pt.pkl')
+    similarity_scores_path = os.path.join(script_dir, 'similarity_scores.pkl')
+    
+    with open(popular_path, 'rb') as file:
+            popular = pickle.load(file)
+    with open(pt_path, 'rb') as file:
+            pt = pickle.load(file)
+    with open(similarity_scores_path, 'rb') as file:
+            similarity_scores = pickle.load(file)
+        
+except Exception as e:
+        logging.error(f"Error loading pickle file '{file_path}': {str(e)}")
+        
 
 @app.route('/')
 def index():
