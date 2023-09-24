@@ -1,4 +1,4 @@
-from flask import Flask,render_template,request
+from flask import Flask, render_template, request
 import os
 import pickle
 import joblib
@@ -27,7 +27,12 @@ except Exception as e:
         
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('index.html',
+                           book_name=list(popular['Book-Title'].values),
+                           author=list(popular['Book-Author'].values),
+                           image=list(popular['Image-URL-M'].values),
+                           votes=list(popular['num_ratings'].values),
+                           rating=list(popular['avg_ratings'].values))
 
 @app.route('/about')
 def about():
